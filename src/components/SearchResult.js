@@ -8,9 +8,11 @@ const SearchResult = ({ records }) => {
       {records.length > 0 ? (
         records.map((record, index) => (
           <div key={index} className="record-item">
-            <p>
-              Name: {record.NAME || 'N/A'}, Email: {record.email || 'N/A'}, ...
-            </p>
+            {Object.entries(record).map(([key, value]) => (
+              <p key={key}>
+                {key}: {value || 'N/A'}
+              </p>
+            ))}
           </div>
         ))
       ) : (
