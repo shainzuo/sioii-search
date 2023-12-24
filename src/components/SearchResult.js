@@ -9,7 +9,8 @@ const SearchResult = ({ data }) => {
         // Display information here
         <p>{data.name}, {data.email}, ...</p>
       ) : (
-        <p>No record found</p>
+        // Display message based on presence of search term
+        <p>{data !== null ? 'No record found' : 'Enter a search term'}</p>
       )}
     </div>
   );
