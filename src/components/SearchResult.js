@@ -7,7 +7,7 @@ const SearchResult = ({ data }) => {
     <div className="search-result-container">
       {data ? (
         // Display information here
-        <p>{data.name}, {data.email}, ...</p>
+        <p>Name: {data.name}, Email: {data.email}, ...</p>
       ) : (
         // Display message based on presence of search term
         <p>{data !== null ? 'No record found' : 'Enter a search term'}</p>
