@@ -21,7 +21,15 @@ const fetchSheetData = async (searchTerm) => {
 
     console.log('Records:', records);
 
-    return records || [];
+    // Find the record that matches the search term (service number or email)
+    const matchedRecord = records.find(record =>
+      record['SVC NO.'].toLowerCase() === searchTerm.toLowerCase() ||
+      record.email.toLowerCase() === searchTerm.toLowerCase()
+    );
+
+    console.log('Matched Record:', matchedRecord);
+
+    return matchedRecord ? [matchedRecord] : [{ feedback: 'No record found' }];
   } catch (error) {
     console.error('Error fetching data from Sheet.best:', error);
     return [];
