@@ -5,6 +5,10 @@ import './SearchBar.css';
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   const handleSearch = () => {
     onSearch(searchTerm);
   };
@@ -13,9 +17,9 @@ const SearchBar = ({ onSearch }) => {
     <div className="search-bar-container">
       <input
         type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Enter email or service number"
+        value={searchTerm}
+        onChange={handleInputChange}
       />
       <button onClick={handleSearch}>Search</button>
     </div>

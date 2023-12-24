@@ -5,7 +5,7 @@ import './SearchResult.css';
 const SearchResult = ({ records }) => {
   return (
     <div className="search-result-container">
-      {records.length > 0 ? (
+      {records.length > 0 && (
         records.map((record, index) => (
           <div key={index} className="record-item">
             {Object.entries(record).map(([key, value]) => (
@@ -15,8 +15,6 @@ const SearchResult = ({ records }) => {
             ))}
           </div>
         ))
-      ) : (
-        <p>No records found</p>
       )}
     </div>
   );
