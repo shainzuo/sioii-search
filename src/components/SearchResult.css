@@ -1,14 +1,18 @@
 /* src/components/SearchResult.css */
 
 .search-result-container {
-    border: 1px solid #ddd;
-    padding: 16px;
     margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .search-result-container p {
+  .record-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .record-item p {
     margin: 0;
   }
   

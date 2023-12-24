@@ -2,15 +2,19 @@
 import React from 'react';
 import './SearchResult.css';
 
-const SearchResult = ({ data }) => {
+const SearchResult = ({ records }) => {
   return (
     <div className="search-result-container">
-      {data ? (
-        // Display information here
-        <p>Name: {data.name}, Email: {data.email}, ...</p>
+      {records.length > 0 ? (
+        records.map((record, index) => (
+          <div key={index} className="record-item">
+            <p>
+              Name: {record.NAME || 'N/A'}, Email: {record.email || 'N/A'}, ...
+            </p>
+          </div>
+        ))
       ) : (
-        // Display message based on presence of search term
-        <p>{data !== null ? 'No record found' : 'Enter a search term'}</p>
+        <p>No records found</p>
       )}
     </div>
   );
