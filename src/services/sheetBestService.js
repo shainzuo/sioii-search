@@ -29,7 +29,8 @@ const fetchSheetData = async (searchTerm) => {
 
     console.log('Matched Record:', matchedRecord);
 
-    return matchedRecord ? [matchedRecord] : [{ feedback: 'No record found' }];
+    // If matchedRecord is undefined, return feedback
+    return matchedRecord !== undefined ? [matchedRecord] : [{ feedback: 'No record found' }];
   } catch (error) {
     console.error('Error fetching data from Sheet.best:', error);
     return [];
